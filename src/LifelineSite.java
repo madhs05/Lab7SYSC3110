@@ -4,10 +4,12 @@ public class LifelineSite extends Site {
         super(units, rate);
     }
 
-    // duplicated structure vs ResidentialSite
-    public double getBillableAmount() {
-        double base = units * rate*0.5;
-        double tax  = base * Site.TAX_RATE*0.2;
-        return base + tax;
+
+    private double getTaxAmount() {
+        return getBaseAmount() * Site.TAX_RATE * 0.2;
+    }
+
+    private double getBaseAmount() {
+        return units * rate * 0.5;
     }
 }
