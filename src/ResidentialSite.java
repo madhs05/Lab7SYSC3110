@@ -9,7 +9,6 @@ public class ResidentialSite extends Site {
     }
 
     protected double getBaseAmount() {
-        double base = units * rate ;
-        return base;
+        return units * rate;
     }
 }

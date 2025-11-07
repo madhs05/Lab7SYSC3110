@@ -15,4 +15,7 @@ public abstract class Site {
         double tax  = base * Site.TAX_RATE;
         return base + tax;
     }
+
+    protected abstract double getTaxAmount();
+    protected abstract double getBaseAmount();
 }
