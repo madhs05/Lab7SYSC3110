@@ -10,5 +10,9 @@ public abstract class Site {
         this.rate = rate;
     }
 
-    public abstract double getBillableAmount();
+    public double getBillableAmount() {
+        double base = units * rate;
+        double tax  = base * Site.TAX_RATE;
+        return base + tax;
+    }
 }
